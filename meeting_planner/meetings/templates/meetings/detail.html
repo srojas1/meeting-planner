@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{%block title %} Meetings detail Page {% endblock %}
+
+{% block content %}
+    <h1>Meeting name: {{meeting.title}}</h1>
+    <p>
+        This meeting date is {{meeting.date}} beggining on {{meeting.start_time}} on <strong> room {{meeting.room}} </strong>
+        and takes {{meeting.duration}} hour(s).
+    </p>
+    <p>
+        <a href="{% url 'welcome'%}">Back to Welcome Page</a>
+    </p>
+{% endblock %}

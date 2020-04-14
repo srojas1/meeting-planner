@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{%block title %} Welcome {% endblock %}
+
+{% block content %}
+    <h1>Welcome to the meeting planner</h1>
+    <p>This is the meeting planner
+        <em>Django: Getting Started</em>
+    </p>
+
+    <a href="{%url 'new' %}">Create new Meeting</a>
+
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+        <li>
+            <a href="{%url 'detail' meeting.id%}">
+                {{meeting.title}}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{% url 'rooms' %}">Go to Rooms page</a>
+    </p>
+{% endblock %}
